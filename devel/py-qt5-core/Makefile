@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtCore module
 
-BUILD_DEPENDS=	${FLAVOR}-enum34>=0:devel/py-enum34
+BUILD_DEPENDS=	${PY_ENUM34}
 
 PYQT_MODULE=	QtCore
 CONFIGURE_ARGS=	${PYQT5_MODULES_ALL:N${PYQT_MODULE}:C/.*/--disable=&/} \
