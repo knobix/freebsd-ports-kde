@@ -7,13 +7,13 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtWebEngine module
 
 # LICENSE set in Mk/Uses/pyqt.mk
-IGNORE=		Does not compile against WebEngine 5.9.5
+BROKEN=		Incompatible with the shipped qt5-webengine version 
 
 USES=		python pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run gui_run network_run webchannel_run
 USE_PYTHON=	concurrent flavors py3kplist
-USE_QT=		core gui location network printsupport qml quick webchannel \
+USE_QT=		core declarative gui location network printsupport webchannel \
 		webengine widgets qmake_build
 
 CONFIGURE_ARGS=	--enable QtWebEngine \

@@ -42,6 +42,7 @@
     SUBDIR += ansible23
     SUBDIR += ansible24
     SUBDIR += ansible25
+    SUBDIR += ansible26
     SUBDIR += anvil
     SUBDIR += apachetop
     SUBDIR += apcpwr
@@ -121,7 +122,6 @@
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
     SUBDIR += bsdisks
-    SUBDIR += bsdmoted
     SUBDIR += bsdploy
     SUBDIR += bsdstats
     SUBDIR += bstack
@@ -249,6 +249,7 @@
     SUBDIR += devstat
     SUBDIR += dfc
     SUBDIR += di
+    SUBDIR += digdag
     SUBDIR += dim
     SUBDIR += dirdiff
     SUBDIR += direnv
@@ -321,7 +322,6 @@
     SUBDIR += facter
     SUBDIR += fanout
     SUBDIR += farbot
-    SUBDIR += fastest_cvsup
     SUBDIR += fatback
     SUBDIR += fcode-utils
     SUBDIR += fconfig
@@ -412,6 +412,7 @@
     SUBDIR += fusefs-wikipediafs
     SUBDIR += fusefs-zip
     SUBDIR += fvcool
+    SUBDIR += fwup
     SUBDIR += gaffitter
     SUBDIR += gai-leds
     SUBDIR += ganglia-monitor-core
@@ -520,6 +521,7 @@
     SUBDIR += intel-pcm-devel
     SUBDIR += intel-qcu
     SUBDIR += iocage
+    SUBDIR += iocage-devel
     SUBDIR += iocell
     SUBDIR += iogen
     SUBDIR += iograph
@@ -550,6 +552,7 @@
     SUBDIR += jkill
     SUBDIR += jobd
     SUBDIR += jps
+    SUBDIR += jstest-gtk
     SUBDIR += jtop
     SUBDIR += jtopen
     SUBDIR += jvmtop
@@ -769,6 +772,7 @@
     SUBDIR += nrg2iso
     SUBDIR += nut
     SUBDIR += nvclock
+    SUBDIR += nvme-cli
     SUBDIR += nvramtool
     SUBDIR += oak
     SUBDIR += obliterate
@@ -910,6 +914,8 @@
     SUBDIR += php71-posix
     SUBDIR += php72-fileinfo
     SUBDIR += php72-posix
+    SUBDIR += php73-fileinfo
+    SUBDIR += php73-posix
     SUBDIR += phpfpm_exporter
     SUBDIR += phybs
     SUBDIR += pick
@@ -969,6 +975,7 @@
     SUBDIR += py-XenAPI
     SUBDIR += py-analyzemft
     SUBDIR += py-ansible-lint
+    SUBDIR += py-ansible-runner
     SUBDIR += py-bcfg2
     SUBDIR += py-cdmi
     SUBDIR += py-consul
@@ -996,6 +1003,7 @@
     SUBDIR += py-mqttwarn
     SUBDIR += py-nagiosplugin
     SUBDIR += py-nomad
+    SUBDIR += py-packet-python
     SUBDIR += py-pkginfo
     SUBDIR += py-ploy
     SUBDIR += py-ploy_ansible
@@ -1009,6 +1017,7 @@
     SUBDIR += py-ptyprocess
     SUBDIR += py-pytsk
     SUBDIR += py-pywatchman
+    SUBDIR += py-pyznap
     SUBDIR += py-queuelib
     SUBDIR += py-ranger
     SUBDIR += py-salt
@@ -1018,6 +1027,7 @@
     SUBDIR += py-stdiff
     SUBDIR += py-superlance
     SUBDIR += py-supervisor
+    SUBDIR += py-tarsnapper
     SUBDIR += py-tmuxp
     SUBDIR += py-uptime
     SUBDIR += py-zdaemon
@@ -1025,7 +1035,6 @@
     SUBDIR += qchroot
     SUBDIR += qdirstat
     SUBDIR += qjail
-    SUBDIR += qjail4
     SUBDIR += qlogtools
     SUBDIR += qpxtool
     SUBDIR += qsudo
@@ -1069,6 +1078,8 @@
     SUBDIR += riak-cs
     SUBDIR += rinse
     SUBDIR += rmonitor
+    SUBDIR += rocr
+    SUBDIR += roct
     SUBDIR += roottail
     SUBDIR += rovclock
     SUBDIR += rpi-firmware
@@ -1150,6 +1161,7 @@
     SUBDIR += rubygem-vagrant-bhyve
     SUBDIR += rubygem-vagrant-mutate
     SUBDIR += rubygem-vagrant-vbguest
+    SUBDIR += rubygem-vagrant_cloud
     SUBDIR += rubygem-vmstat
     SUBDIR += rubygem-win32-file
     SUBDIR += rubygem-win32-file-security
@@ -1183,7 +1195,6 @@
     SUBDIR += scanbuttond
     SUBDIR += scct
     SUBDIR += schedutils
-    SUBDIR += scprotect
     SUBDIR += screen
     SUBDIR += screenfetch
     SUBDIR += screenie
@@ -1252,6 +1263,7 @@
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
+    SUBDIR += synergy-1
     SUBDIR += sysadm
     SUBDIR += sysadm-client
     SUBDIR += sysgather
@@ -1266,6 +1278,7 @@
     SUBDIR += syslog-ng314
     SUBDIR += syslog-ng315
     SUBDIR += syslog-ng317
+    SUBDIR += syslog-ng318
     SUBDIR += syslog-ng36
     SUBDIR += syslog-ng37
     SUBDIR += syslog-ng39

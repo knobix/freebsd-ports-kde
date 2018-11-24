@@ -104,7 +104,6 @@
     SUBDIR += gcc5
     SUBDIR += gcc6
     SUBDIR += gcc6-aux
-    SUBDIR += gcc6-devel
     SUBDIR += gcc7
     SUBDIR += gcc7-devel
     SUBDIR += gcc8
@@ -112,6 +111,7 @@
     SUBDIR += gcc9-devel
     SUBDIR += gforth
     SUBDIR += ghc
+    SUBDIR += ghc843
     SUBDIR += gjs
     SUBDIR += gnat_util
     SUBDIR += gnatcross-aarch64
@@ -280,6 +280,8 @@
     SUBDIR += php71-extensions
     SUBDIR += php72
     SUBDIR += php72-extensions
+    SUBDIR += php73
+    SUBDIR += php73-extensions
     SUBDIR += php_doc
     SUBDIR += picoc
     SUBDIR += pocl
@@ -309,7 +311,6 @@
     SUBDIR += python37
     SUBDIR += qore
     SUBDIR += qscheme
-    SUBDIR += qt5-qml
     SUBDIR += quack
     SUBDIR += racket
     SUBDIR += racket-minimal

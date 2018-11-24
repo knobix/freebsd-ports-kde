@@ -213,17 +213,23 @@ _APIDIR_REL=	share/${_VERSION_SUBDIR_REL}/qsci
 _DOCDIR_REL=	share/doc/${_VERSION_SUBDIR_REL}
 _EXAMPLEDIR_REL=	share/examples/${_VERSION_SUBDIR_REL}
 _SIPDIR_REL=	share/${_VERSION_SUBDIR_REL}/sip
+_DESIGNERDIR_REL=	${QT_PLUGINDIR_REL}/designer/${_VERSION_SUBDIR_REL}
+_QMLDIR_REL=		${QT_QMLDIR_REL}/${_VERSION_SUBDIR_REL}
 
 # Absolute direcotries
 PYQT_APIDIR=		${PREFIX}/${_APIDIR_REL}
 PYQT_DOCDIR=		${PREFIX}/${_DOCDIR_REL}
 PYQT_EXAMPLEDIR=	${PREFIX}/${_EXAMPLEDIR_REL}
 PYQT_SIPDIR=		${PREFIX}/${_SIPDIR_REL}
+PYQT_DESIGNERDIR=	${PREFIX}/${_DESIGNERDIR_REL}
+PYQT_QMLDIR=		${PREFIX}/${_QMLDIR_REL}
 
 PLIST_SUB+=	PYQT_APIDIR=${_APIDIR_REL} \
 		PYQT_DOCDIR=${_DOCDIR_REL} \
 		PYQT_EXAMPLEDIR=${_EXAMPLEDIR_REL} \
-		PYQT_SIPDIR=${_SIPDIR_REL}
+		PYQT_SIPDIR=${_SIPDIR_REL} \
+		PYQT_DESIGNERDIR=${_DESIGNERDIR_REL} \
+		PYQT_QMLDIR=${_QMLDIR_REL}
 
 .if defined(PYQT_DIST)
 PORTVERSION=	${PYQT_VERSION}
@@ -249,7 +255,11 @@ CONFIGURE_ARGS+=-b ${PREFIX}/bin \
 		--confirm-license \
 		--sip ${SIP} \
 		--sipdir ${PYQT_SIPDIR}
-
+# Move the designer plugin and qml libraries to versioned folders.
+.if ${_PYQT_VERSION:M5}
+CONFIGURE_ARGS+=--qml-plugindir ${PYQT_QMLDIR} \
+		--designer-plugindir ${PYQT_DESIGNERDIR}
+.endif
 # One of the things PyQt looks for to determine whether to build the Qt DBus
 # main loop module (${PYQT_RELNAME}-dbussupport) is whether the dbus/ directory is
 # present. Only extract it for that port then.

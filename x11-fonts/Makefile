@@ -39,7 +39,6 @@
     SUBDIR += doulos
     SUBDIR += doulos-compact
     SUBDIR += droid-fonts-ttf
-    SUBDIR += emojione-color-font-ttf
     SUBDIR += encodings
     SUBDIR += exo
     SUBDIR += fantasque-sans-mono
@@ -137,6 +136,7 @@
     SUBDIR += linuxlibertine-g
     SUBDIR += lohit
     SUBDIR += manu-gothica
+    SUBDIR += materialdesign-ttf
     SUBDIR += meslo
     SUBDIR += mgopen
     SUBDIR += mkbold
@@ -171,6 +171,7 @@
     SUBDIR += psftools
     SUBDIR += py-QtAwesome
     SUBDIR += py-bdflib
+    SUBDIR += raleway
     SUBDIR += roboto-fonts-ttf
     SUBDIR += sgifonts
     SUBDIR += sharefonts
@@ -188,6 +189,7 @@
     SUBDIR += tlwg-ttf
     SUBDIR += tmu
     SUBDIR += tv-fonts
+    SUBDIR += twemoji-color-font-ttf
     SUBDIR += ubuntu-font
     SUBDIR += urwfonts
     SUBDIR += urwfonts-ttf

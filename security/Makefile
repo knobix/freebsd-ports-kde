@@ -227,7 +227,6 @@
     SUBDIR += hs-HsOpenSSL
     SUBDIR += hs-RSA
     SUBDIR += hs-SHA
-    SUBDIR += hs-certificate
     SUBDIR += hs-cipher-aes
     SUBDIR += hs-cipher-aes128
     SUBDIR += hs-cipher-blowfish
@@ -377,6 +376,7 @@
     SUBDIR += libwhisker
     SUBDIR += libyubikey
     SUBDIR += libzrtpcppcore
+    SUBDIR += linux-c6-audit-libs
     SUBDIR += linux-c6-cyrus-sasl2
     SUBDIR += linux-c6-gnutls
     SUBDIR += linux-c6-libgcrypt
@@ -385,6 +385,7 @@
     SUBDIR += linux-c6-libtasn1
     SUBDIR += linux-c6-nss
     SUBDIR += linux-c6-openssl
+    SUBDIR += linux-c6-pam
     SUBDIR += linux-c7-cyrus-sasl2
     SUBDIR += linux-c7-gnutls
     SUBDIR += linux-c7-libgcrypt
@@ -407,6 +408,7 @@
     SUBDIR += maia
     SUBDIR += mailzu
     SUBDIR += makepasswd
+    SUBDIR += maltrail
     SUBDIR += manipulate_data
     SUBDIR += masscan
     SUBDIR += matrixssl
@@ -465,7 +467,6 @@
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
     SUBDIR += openssl
-    SUBDIR += openssl-devel
     SUBDIR += openssl-unsafe
     SUBDIR += openssl111
     SUBDIR += openssl_tpm_engine
@@ -489,9 +490,13 @@
     SUBDIR += ophcrack
     SUBDIR += orthrus
     SUBDIR += osiris
-    SUBDIR += ossec-hids-client
+    SUBDIR += ossec-hids
+    SUBDIR += ossec-hids-agent
+    SUBDIR += ossec-hids-agent-config
     SUBDIR += ossec-hids-local
+    SUBDIR += ossec-hids-local-config
     SUBDIR += ossec-hids-server
+    SUBDIR += ossec-hids-server-config
     SUBDIR += osslsigncode
     SUBDIR += otpw
     SUBDIR += outguess
@@ -795,6 +800,7 @@
     SUBDIR += pear-Auth_HTTP
     SUBDIR += pear-Auth_PrefManager
     SUBDIR += pear-Auth_SASL
+    SUBDIR += pear-Auth_SASL2
     SUBDIR += pear-Crypt_Blowfish
     SUBDIR += pear-Crypt_CBC
     SUBDIR += pear-Crypt_CHAP
@@ -852,6 +858,10 @@
     SUBDIR += php72-hash
     SUBDIR += php72-openssl
     SUBDIR += php72-sodium
+    SUBDIR += php73-filter
+    SUBDIR += php73-hash
+    SUBDIR += php73-openssl
+    SUBDIR += php73-sodium
     SUBDIR += phpdeadlock
     SUBDIR += phpsecinfo
     SUBDIR += pidentd
@@ -910,6 +920,7 @@
     SUBDIR += py-backports.ssl_match_hostname
     SUBDIR += py-bcrypt
     SUBDIR += py-borg.localrole
+    SUBDIR += py-bro-pkg
     SUBDIR += py-btchip-python
     SUBDIR += py-cerealizer
     SUBDIR += py-certbot

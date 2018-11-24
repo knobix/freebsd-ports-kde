@@ -12,8 +12,8 @@ COMMENT=	Python bindings for the Qt4 toolkit, QtCore module
 CONFIGURE_ARGS=		--enable QtCore
 PYQT_DIST=		yes
 
-USES=			python pyqt:4
-USE_PYTHON=		py3kplist concurrent flavors py3kplist
+USES=			python pyqt:4 qt:4
+USE_PYTHON=		concurrent flavors py3kplist
 USE_PYQT=		sip
 USE_QT=			corelib qmake_build moc_build
 

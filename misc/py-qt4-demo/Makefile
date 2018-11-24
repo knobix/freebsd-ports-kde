@@ -17,7 +17,7 @@ DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 
 NO_BUILD=	yes
 USES=		python pyqt:4
-USE_PYTHON=	py3kplist concurrent flavors py3kplist
+USE_PYTHON=	concurrent flavors py3kplist
 
 USE_PYQT=	assistant_run core_run dbus_run dbussupport_run declarative_run \
 		designer_run designerplugin_run doc_run gui_run help_run \

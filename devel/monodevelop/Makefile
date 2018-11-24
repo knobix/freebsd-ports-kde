@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	monodevelop
-PORTVERSION=	7.6.3.1
+PORTVERSION=	7.6.11.7
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mono@FreeBSD.org
@@ -14,14 +15,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	msbuild:devel/msbuild \
 		fsharpc:lang/fsharp \
-		cmake:devel/cmake
+		cmake:devel/cmake \
+		${LOCALBASE}/lib/libcrypto.so:security/openssl
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libssh2.so:security/libssh2
 RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:x11-toolkits/libgdiplus \
 		exctags:devel/ctags \
 		git:devel/git \
 		svn:devel/subversion \
-		fsharpc:lang/fsharp
+		fsharpc:lang/fsharp \
+		${LOCALBASE}/lib/libcrypto.so:security/openssl
 
 # main/external/fsharpbinding/paket.lock
 NUGET_FEEDS=	NUGET ROSLYN ROSLYN_FOR_VS_FOR_MAC  TEMPLATING VS_IMPL VS_EDITOR VSSDK VSTEST
@@ -46,7 +49,7 @@ PAKET_DEPENDS=	ExtCore=0.8.46 \
 		System.ValueTuple=4.4.0
 PAKET_PACKAGEDIR=${WRKSRC}/external/fsharpbinding/packages
 
-USES=		autoreconf desktop-file-utils gettext gmake gnome mono:nuget pathfix pkgconfig shared-mime-info ssl
+USES=		autoreconf desktop-file-utils gettext gmake gnome mono:nuget pathfix pkgconfig shared-mime-info
 USE_GNOME=	gtksharp20 gnomesharp20
 INSTALLS_ICONS=	yes
 
@@ -56,7 +59,6 @@ CONFIGURE_ARGS=	--enable-release --disable-update-mimedb --disable-update-deskto
 INSTALL=	/usr/bin/install
 USE_GITHUB=	yes
 GH_ACCOUNT=	mono
-GH_TAGNAME=	6594701	# release-7.6 @ 2018-08-30
 GH_TUPLE=	icsharpcode:RefactoringEssentials:0148f6a:1/external/RefactoringEssentials \
 		mono:debugger-libs:cd477ba:3/external/debugger-libs \
 		mono:guiunit:dd094e7:4/external/guiunit \
@@ -66,11 +68,12 @@ GH_TUPLE=	icsharpcode:RefactoringEssentials:0148f6a:1/external/RefactoringEssent
 		mono:mono-addins:293cbf2:9/external/mono-addins \
 		icsharpcode:NRefactory:0607a4a:10/external/nrefactory \
 		mono:nuget-binary:ebedbf8:11/external/nuget-binary \
-		mono:xwt:f36e2af:12/external/xwt
+		mono:xwt:cacc327:12/external/xwt
 
 INSTALL_TARGET=	install-strip
 MAKE_ENV=	DOTNET_MSBUILD_SDK_RESOLVER_SDKS_DIR= \
-		XDG_CACHE_HOME=${WRKDIR}
+		XDG_CACHE_HOME=${WRKDIR} \
+		OPENSSL_ROOT_DIR=${LOCALBASE}
 MAKE_JOBS_UNSAFE=Build parallelization not implemented
 WRKSRC_SUBDIR=	main
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9].*

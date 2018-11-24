@@ -13,7 +13,7 @@ USES=		python pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run widgets_run
 USE_PYTHON=	concurrent flavors py3kplist
-USE_QT=		core gui widgets help network sql buildtools_build qmake_build xml 
+USE_QT=		core gui widgets help network sql buildtools_build qmake_build xml
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

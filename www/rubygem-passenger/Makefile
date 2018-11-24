@@ -3,6 +3,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	5.3.5
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -23,6 +24,9 @@ FLAVOR?=	${FLAVORS:[1]}
 
 apache_PKGNAMESUFFIX=	-apache
 nginx_PKGNAMESUFFIX=	-nginx
+
+apache_CONFLICTS_INSTALL=	${PKGNAMEPREFIX}${PORTNAME}-nginx
+nginx_CONFLICTS_INSTALL=	${PKGNAMEPREFIX}${PORTNAME}-apache
 
 OPTIONS_DEFINE=	DEBUG SYMLINK
 OPTIONS_EXCLUDE=DOCS
@@ -60,7 +64,7 @@ BUILD_DEPENDS+=	rubygem-rack>=0:www/rubygem-rack
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_LIST+=	GEM_LIB_DIR=${GEM_LIB_DIR} RUBY=${RUBY}
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message-${FLAVOR}
 
 PLIST_FILES=	bin/passenger \
 		bin/passenger-config \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.16.3
+PORTVERSION=	0.17.0
 PORTREVISION?=	0
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/:DEFAULT \
@@ -111,10 +111,6 @@ CONFIGURE_ARGS+=	--disable-wallet
 .if ${PORT_OPTIONS:MWALLET_BDB48} || ${PORT_OPTIONS:MWALLET_BDBMODERN}
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 LIBS+=		-L${BDB_LIB_DIR}
-.endif
-
-.if ${OSVERSION} < 1100000
-CONFIGURE_ARGS+=--disable-asm
 .endif
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"

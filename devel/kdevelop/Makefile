@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdevelop
-DISTVERSION=	5.2.3
-PORTREVISION=	2
+DISTVERSION=	5.3.0
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
@@ -31,7 +30,7 @@ USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
 		notifyconfig package parts plasma-framework \
 		runner service solid sonnet texteditor textwidgets threadweaver \
 		widgetsaddons windowsystem xmlgui
-USE_QT=		concurrent core dbus gui help network qml quick \
+USE_QT=		concurrent core dbus declarative gui help network \
 		script sql widgets xml buildtools_build qmake_build
 CONFLICTS=	kdevelop-kde4-4* kdevelop-4* kdevplatform-kde4-4* kdevplatform-4*
 SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \

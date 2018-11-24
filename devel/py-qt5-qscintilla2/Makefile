@@ -26,9 +26,10 @@ USE_QT=		core gui printsupport widgets buildtools_build qmake_build
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace
 
+QSCIDIR=	${PREFIX}/share/qt5/qsci
 CONFIGURE_ARGS=	--pyqt PyQt5 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt5 -v ${PYQT_SIPDIR} \
 		--apidir ${PYQT_APIDIR} --qmake ${QMAKE} --pyqt-sipdir ${PYQT_SIPDIR} \
-		--sip ${LOCALBASE}/bin/sip-${PYTHON_VER}
+		--sip ${SIP}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
 ALL_TARGET=	#empty
 

@@ -28,9 +28,10 @@ USE_QT=		corelib gui moc_build qmake_build
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace
 
+PYQT_APIDIR=	${PREFIX}/share/qt4/qsci
 CONFIGURE_ARGS=	--pyqt PyQt4 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt4 -v ${PYQT_SIPDIR} \
 		--apidir ${PYQT_APIDIR} --qmake ${QMAKE} --pyqt-sipdir ${PYQT_SIPDIR} \
-		--sip ${LOCALBASE}/bin/sip-${PYTHON_VER}
+		--sip ${SIP}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
 ALL_TARGET=	#empty
 
