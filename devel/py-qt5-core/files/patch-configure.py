@@ -131,7 +131,8 @@ simplify plist handling.
 -''' % (' '.join(subdirs), source_path('__init__.py'), root_dir))
 +''' % (source_path('__init__.py'), root_dir))
  
-     all_installs.append(root_dir + '/__init__.py')
+-    all_installs.append(root_dir + '/__init__.py')
++    # all_installs.append(root_dir + '/__init__.py')
  
 -    # Install the uic module.
 -    out_f.write('''
