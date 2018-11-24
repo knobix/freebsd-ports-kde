@@ -186,15 +186,7 @@ simplify plist handling.
  
      if distinfo:
          # The command to run to generate the .dist-info directory.
-@@ -1739,6 +1728,7 @@ INSTALLS += distinfo
-         installed = open('installed.txt', 'w')
- 
-         for install in all_installs:
-+            print("adding ", install, " to install.txt")
-             installed.write(install + '\n')
- 
-         installed.close()
-@@ -1984,7 +1974,7 @@ def inform_user(target_config, sip_version):
+@@ -1984,7 +1973,7 @@ def inform_user(target_config, sip_version):
                          os.path.join(
                                  target_config.qsci_api_dir, 'api', 'python'))
  
@@ -203,7 +195,7 @@ simplify plist handling.
          inform("The PyQt5 PEP 484 stub files will be installed in %s." %
                  target_config.pyqt_stubs_dir)
  
-@@ -2553,7 +2543,7 @@ def generate_sip_module_code(target_config, verbose, p
+@@ -2553,7 +2542,7 @@ def generate_sip_module_code(target_config, verbose, p
              argv.append('-a')
              argv.append(mname + '.api')
  
@@ -212,7 +204,7 @@ simplify plist handling.
              argv.append('-y')
              argv.append(mname + '.pyi')
  
-@@ -2726,7 +2716,7 @@ target.files = $$PY_MODULE
+@@ -2726,7 +2715,7 @@ target.files = $$PY_MODULE
      pro_lines.append('INSTALLS += target')
  
      # This optimisation could apply to other platforms.
