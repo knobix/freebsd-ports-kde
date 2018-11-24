@@ -255,10 +255,12 @@ CONFIGURE_ARGS+=-b ${PREFIX}/bin \
 		--confirm-license \
 		--sip ${SIP} \
 		--sipdir ${PYQT_SIPDIR}
-# Move the designer plugin and qml libraries to versioned folders.
 .if ${_PYQT_VERSION:M5}
+# Move the designer plugin and qml libraries to versioned folders.
 CONFIGURE_ARGS+=--qml-plugindir ${PYQT_QMLDIR} \
 		--designer-plugindir ${PYQT_DESIGNERDIR}
+# Further do not gernate the dinstinfo files.
+CONFIGURE_ARGS+=--no-dist-info
 .endif
 # One of the things PyQt looks for to determine whether to build the Qt DBus
 # main loop module (${PYQT_RELNAME}-dbussupport) is whether the dbus/ directory is
