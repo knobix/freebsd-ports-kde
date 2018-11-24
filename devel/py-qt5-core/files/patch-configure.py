@@ -111,7 +111,7 @@ simplify plist handling.
      # Generate the Python dbus module.
      if target_config.pydbus_module_dir != '':
          mname = 'dbus'
-@@ -1627,21 +1609,25 @@ def generate_makefiles(target_config, verbose, parts, 
+@@ -1627,27 +1609,31 @@ def generate_makefiles(target_config, verbose, parts, 
          all_installs.append(
                  root_dir + '/' + module_file_name(target_config, mname))
  
@@ -136,12 +136,19 @@ simplify plist handling.
  
 -    # Install the uic module.
 -    out_f.write('''
-+    if not target_config.no_tools:
-+        # Install the uic module.
-+        out_f.write('''
++        if not target_config.no_tools:
++            # Install the uic module.
++            out_f.write('''
  uic_package.files = %s
  uic_package.path = %s
  INSTALLS += uic_package
+ ''' % (source_path('pyuic', 'uic'), root_dir))
+ 
+-    all_installs.append(root_dir + '/uic')
++    # all_installs.append(root_dir + '/uic')
+ 
+     # Install the tool main scripts and wrappers.
+     if wrappers:
 @@ -1676,6 +1662,8 @@ INSTALLS += tools
      # Install the .sip files.
      if target_config.pyqt_sip_dir:
