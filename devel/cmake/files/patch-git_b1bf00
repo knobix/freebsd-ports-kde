@@ -1,0 +1,32 @@
+From b1b5004c1a00b123170724dd3a2d8c024f72684a Mon Sep 17 00:00:00 2001
+From: Sebastian Holtermann <sebholt@xwmw.org>
+Date: Tue, 27 Nov 2018 10:50:49 +0100
+Subject: [PATCH] Autogen: Fix empty uic executable string
+
+In CMake 3.13.0 when a target has ``AUTOUIC`` enabled but doesn't
+link against Qt5Widgets, the uic executable string is empty and
+an error string "The uic executable \"\" does not exist" is generated.
+In CMake 3.12 ``AUTOUIC`` was silently disabled instead.
+This patch fixes the regression and restores the behavior of CMake 3.12.
+
+Fixes: #18630
+---
+ Source/cmQtAutoGenInitializer.cxx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Source/cmQtAutoGenInitializer.cxx b/Source/cmQtAutoGenInitializer.cxx
+index 8a202a2f64..ba7a565cae 100644
+--- Source/cmQtAutoGenInitializer.cxx
++++ Source/cmQtAutoGenInitializer.cxx
+@@ -1409,7 +1409,7 @@ bool cmQtAutoGenInitializer::GetUicExecutable()
+   }
+ 
+   // Test uic command
+-  if (err.empty()) {
++  if (err.empty() && !this->Uic.Executable.empty()) {
+     if (cmSystemTools::FileExists(this->Uic.Executable, true)) {
+       std::vector<std::string> command;
+       command.push_back(this->Uic.Executable);
+-- 
+2.18.1
+
