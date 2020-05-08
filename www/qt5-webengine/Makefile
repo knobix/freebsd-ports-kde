@@ -145,7 +145,7 @@ pre-configure:
 # Unbundle a few dependencies.
 	${PYTHON_CMD} ${WRKSRC}/src/3rdparty/chromium/build/linux/unbundle/replace_gn_files.py \
 		--system-libraries libwebp libxml libxslt yasm
-# Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
+# Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers
 	cd ${WRKSRC} && ${QT_BINDIR}/syncqt.pl -version ${QT5_VERSION}
 
 .include <bsd.port.post.mk>
